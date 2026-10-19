@@ -343,9 +343,9 @@ nav a:hover::after, nav a:focus-visible::after { transform: translateX(130%); }
 
 /* Firma de la autora: permanece visible entre escenas */
 .creditos-autora { text-align:center; max-width:650px; margin:35px auto 20px; padding:25px 20px; border-top:1px solid #b08d57; }
-.creditos-autora p { font-family:"Lumanosimo",cursive; font-size:.85rem; color:#4b382d; margin-bottom:10px; }
-.creditos-autora .nombre-autora { font-family:"Cormorant Garamond",serif; font-size:1.3rem; font-weight:600; color:#6b2637; }
-.creditos-autora a { display:inline-block; font-family:"Playwrite ID",cursive; font-size:.8rem; color:#6b2637; text-decoration:none; transition:color .3s ease,transform .3s ease; }
+.creditos-autora p { font-family:"Lumanosimo",cursive; font-size:.85rem; color:#B08D57; margin-bottom:10px; }
+.creditos-autora .nombre-autora { font-family:"Cormorant Garamond",serif; font-size:1.3rem; font-weight:600; color:#B08D57; }
+.creditos-autora a { display:inline-block; font-family:"Playwrite ID",cursive; font-size:.8rem; color:#B08D57; text-decoration:none; transition:color .3s ease,transform .3s ease; }
 .creditos-autora a:hover { color:#b08d57; transform:translateY(-2px); }
 .creditos-autora a:focus-visible { outline:3px solid #647789; outline-offset:4px; }
 @media (prefers-reduced-motion:reduce) { .creditos-autora a { transition:none; } .creditos-autora a:hover { transform:none; } }
