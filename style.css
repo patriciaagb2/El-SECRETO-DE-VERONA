@@ -1,0 +1,351 @@
+/* ROMEO Y JULIETA — Un manuscrito renacentista interactivo */
+:root {
+  --borgona: #6B2637;
+  --dorado: #B08D57;
+  --marfil: #F3E8D5;
+  --marron: #4B382D;
+  --oliva: #555B3C;
+  --azul: #647789;
+  --piedra: #777C80;
+  --nieve: #E9EDF0;
+  --tinta: #392b25;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: clamp(1.2rem, 5vw, 4rem) 1rem;
+  color: var(--tinta);
+  background-color: #6a5949;
+  background-image:
+    radial-gradient(ellipse at 18% 15%, #a48c70a6, transparent 46%),
+    radial-gradient(ellipse at 85% 90%, #2c261fb3, transparent 55%),
+    repeating-linear-gradient(115deg, #ffffff08 0 2px, transparent 2px 9px),
+    linear-gradient(145deg, #756452, #43362f);
+  font-family: 'Lumanosimo', cursive;
+  font-size: 0.94rem;
+  line-height: 2.05;
+}
+.manuscrito {
+  position: relative;
+  width: min(100%, 850px);
+  margin: 0 auto;
+  padding: clamp(2.1rem, 6vw, 5rem) clamp(1.35rem, 6vw, 5rem);
+  background-color: var(--marfil);
+  background-image:
+    radial-gradient(circle at 7% 9%, #b08d5729, transparent 33%),
+    radial-gradient(circle at 96% 92%, #8d6c4930, transparent 39%),
+    repeating-linear-gradient(0deg, #6b4a2806 0 1px, transparent 1px 6px);
+  border: 1px solid #d0b88e;
+  outline: 3px double var(--dorado);
+  outline-offset: -15px;
+  box-shadow: 0 18px 55px #1e1511a8, inset 0 0 65px #a27c4938;
+}
+.manuscrito::before, .manuscrito::after {
+  content: '✦';
+  position: absolute;
+  font-family: Georgia, serif;
+  font-size: 1.15rem;
+  color: var(--dorado);
+}
+.manuscrito::before { top: 17px; left: 25px; }
+.manuscrito::after { bottom: 17px; right: 25px; }
+.ornamento {
+  color: var(--dorado);
+  font-family: Georgia, serif;
+  text-align: center;
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 1.1rem;
+}
+.ornamento-final { margin: 2rem 0 0; font-size: 1.45rem; }
+h1 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.65rem, 4.5vw, 3rem);
+  line-height: 1.35;
+  font-weight: 700;
+  text-align: center;
+  color: var(--borgona);
+  margin: 0 0 0.6rem;
+  overflow-wrap: anywhere;
+}
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  font-style: italic;
+  font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
+  color: var(--marron);
+  margin: 0 auto 2rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--dorado);
+  max-width: 27rem;
+}
+p {
+  font-family: 'Lumanosimo', cursive;
+  font-weight: 400;
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+  line-height: 2.1;
+  margin: 0 0 1.5rem;
+  overflow-wrap: break-word;
+}
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.9rem;
+  margin-top: 2.4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid #b08d5773;
+}
+a {
+  display: block;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--dorado);
+  border-radius: 2px;
+  background: var(--borgona);
+  color: #fff5e3;
+  text-decoration: none;
+  text-align: center;
+  font-family: 'Playwrite ID', cursive;
+  font-weight: 300;
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  line-height: 1.6;
+  box-shadow: inset 0 0 0 3px #6b2637, inset 0 0 0 4px #b08d5770;
+  transition: background-color .25s ease, color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+a:hover { background: #87374b; color: white; transform: translateY(-2px); box-shadow: 0 6px 18px #4b382d40; }
+a:focus-visible { outline: 3px solid var(--oliva); outline-offset: 4px; }
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem auto 2rem;
+  border: 7px solid #e4d5b9;
+  outline: 1px solid var(--dorado);
+  box-shadow: 0 9px 25px #242b3280;
+}
+/* Variaciones emocionales sobre la misma identidad visual */
+.escena-carta .manuscrito { border-color: #b08d57; }
+.escena-confesion { background-color: #54463b; }
+.escena-encuentro { background-image: radial-gradient(ellipse at top, #8e8067, transparent 65%), linear-gradient(155deg, #49483e, #2b292b); }
+.escena-conflicto, .escena-tragedia { background-image: radial-gradient(ellipse at top, #6b26379c, transparent 65%), linear-gradient(145deg, #49342e, #211b1b); }
+.escena-conflicto h1, .escena-tragedia h1 { color: #712333; }
+.escena-paz { background-image: radial-gradient(ellipse at top, #9ca27b, transparent 70%), linear-gradient(145deg, #596044, #30382d); }
+.escena-paz h1 { color: var(--oliva); }
+.escena-huida {
+  background-color: var(--piedra);
+  background-image: radial-gradient(ellipse at top, #e9edf06e, transparent 55%), linear-gradient(155deg, var(--azul), #303e4d);
+}
+.escena-huida .manuscrito {
+  background-color: var(--nieve);
+  background-image: radial-gradient(circle at 10% 10%, #ffffffcc, transparent 42%), repeating-linear-gradient(0deg, #64778908 0 1px, transparent 1px 7px);
+  border-color: var(--piedra);
+  outline-color: var(--azul);
+  box-shadow: 0 18px 55px #152432a3, inset 0 0 55px #64778926;
+}
+.escena-huida h1 { color: #435b6d; }
+.escena-huida h2 { border-color: var(--azul); }
+.escena-huida .ornamento, .escena-huida .manuscrito::before, .escena-huida .manuscrito::after { color: var(--azul); }
+.escena-huida nav { border-color: #64778977; }
+.escena-huida a { background: #435b6d; border-color: #a3b0b9; box-shadow: inset 0 0 0 3px #435b6d, inset 0 0 0 4px #d1dae1; }
+.escena-huida a:hover { background: #526d82; }
+@media (max-width: 600px) {
+  body { padding: 1rem 0.65rem; }
+  .manuscrito { outline-offset: -9px; padding: 2.5rem 1.35rem; }
+  .manuscrito::before { top: 10px; left: 15px; }
+  .manuscrito::after { bottom: 10px; right: 15px; }
+  nav { margin-top: 1.5rem; }
+  a { padding: 0.9rem 0.8rem; }
+  img { border-width: 4px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  a { transition: none; }
+  a:hover { transform: none; }
+}
+
+/* Escenografía arquitectónica en los márgenes del manuscrito */
+body {
+  position: relative;
+  isolation: isolate;
+  min-height: 100svh;
+  padding: clamp(1.5rem, 4vh, 3.5rem) clamp(1rem, 3vw, 3rem);
+  background-attachment: fixed;
+}
+body::before {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  opacity: .5;
+  background-image:
+    repeating-linear-gradient(90deg, transparent 0 11.7%, #d7b98b22 11.8% 12%, transparent 12.1% 24.9%),
+    repeating-linear-gradient(0deg, transparent 0 80px, #261b1533 81px 83px, transparent 84px 160px),
+    radial-gradient(ellipse at 50% 0%, #e0bc7c38, transparent 55%);
+}
+body::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+  opacity: .34;
+  background:
+    linear-gradient(90deg, #1c1713a8 0, transparent 19%, transparent 81%, #1c1713a8 100%),
+    repeating-linear-gradient(90deg, transparent 0 7.7%, #d7b98b24 7.8% 8%, transparent 8.1% 16.5%);
+}
+.manuscrito {
+  width: min(100%, 1120px);
+  min-height: calc(100svh - clamp(3rem, 8vh, 7rem));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2.6rem, 5vw, 5.5rem) clamp(1.5rem, 7vw, 7rem);
+}
+.manuscrito p, .manuscrito nav { width: 100%; max-width: 780px; margin-left: auto; margin-right: auto; }
+.manuscrito nav { margin-top: 2rem; }
+.manuscrito img { max-height: 55vh; width: auto; object-fit: contain; }
+.escena-huida::before {
+  opacity: .45;
+  background-image:
+    repeating-linear-gradient(90deg, transparent 0 15%, #e9edf022 15.1% 15.3%, transparent 15.4% 30%),
+    repeating-linear-gradient(0deg, transparent 0 75px, #192d3c38 76px 78px, transparent 79px 150px);
+}
+@media (min-width: 1500px) {
+  .manuscrito { width: min(82vw, 1280px); }
+  p { font-size: 1.05rem; }
+}
+@media (max-width: 600px) {
+  body { padding: .75rem; background-attachment: scroll; }
+  .manuscrito { min-height: calc(100svh - 1.5rem); padding: 2.7rem 1.4rem; }
+  .manuscrito img { max-height: none; width: 100%; }
+}
+
+/* Video introductorio integrado en el manuscrito */
+.video-ambientacion {
+  width: min(100%, 850px);
+  margin: clamp(1.5rem, 4vw, 2.5rem) auto;
+  text-align: center;
+}
+.video-ambientacion h2 {
+  color: #6B2637;
+  margin-bottom: 1.25rem;
+}
+.contenedor-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 5px solid #B08D57;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(75, 56, 45, .35);
+  background: #4B382D;
+}
+.contenedor-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Música de ambientación: discreta, secundaria a la narración */
+.video-ambientacion {
+  width: min(100%, 340px);
+  margin: 1.25rem auto 1.5rem;
+  padding: 0.8rem 1rem 1rem;
+  border: 1px solid #b08d5780;
+  background: #eadac09c;
+  box-shadow: inset 0 0 18px #b08d5717;
+}
+.video-ambientacion h2 {
+  font-size: clamp(1.25rem, 2.3vw, 1.6rem);
+  margin: 0 auto .45rem;
+  padding: 0 0 .5rem;
+}
+.video-ambientacion .indicacion-audio {
+  width: 100%;
+  font-size: .76rem;
+  line-height: 1.65;
+  margin: 0 auto .7rem;
+}
+.video-ambientacion .contenedor-video {
+  border: 2px solid var(--dorado);
+  border-radius: 2px;
+  box-shadow: 0 4px 12px #4b382d33;
+}
+/* El manuscrito entra como una página que termina de desplegarse */
+@keyframes abrir-pagina {
+  from { opacity: 0; transform: perspective(1400px) rotateY(-8deg) translateX(22px); filter: brightness(.88); }
+  to { opacity: 1; transform: perspective(1400px) rotateY(0) translateX(0); filter: brightness(1); }
+}
+@keyframes cerrar-pagina {
+  from { opacity: 1; transform: perspective(1400px) rotateY(0) translateX(0); }
+  to { opacity: 0; transform: perspective(1400px) rotateY(8deg) translateX(-22px); }
+}
+.manuscrito {
+  transform-origin: left center;
+  backface-visibility: hidden;
+  animation: abrir-pagina .65s cubic-bezier(.2,.7,.2,1) both;
+}
+body.saliendo .manuscrito {
+  transform-origin: right center;
+  animation: cerrar-pagina .32s ease-in both;
+  pointer-events: none;
+}
+/* Las decisiones se iluminan como inscripciones en un manuscrito */
+nav a {
+  position: relative;
+  overflow: hidden;
+  transition: background-color .3s, color .3s, transform .3s, box-shadow .3s, letter-spacing .3s;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 25%, #fff5e32b 50%, transparent 75%);
+  transform: translateX(-130%);
+  transition: transform .6s ease;
+  pointer-events: none;
+}
+nav a:hover, nav a:focus-visible { letter-spacing: .015em; transform: translateY(-3px); }
+nav a:hover::after, nav a:focus-visible::after { transform: translateX(130%); }
+@media (prefers-reduced-motion: reduce) {
+  .manuscrito, body.saliendo .manuscrito { animation: none; }
+  nav a, nav a::after { transition: none; }
+  nav a:hover, nav a:focus-visible { transform: none; letter-spacing: normal; }
+  nav a::after { display: none; }
+}
+
+/* Reproductor fijo: permanece en el DOM durante la navegación entre nodos */
+.musica-persistente {
+  position: fixed; right: 1rem; bottom: 1rem; z-index: 100;
+  width: min(300px, calc(100vw - 2rem)); padding: .7rem;
+  background: #f3e8d5; color: #4b382d; border: 2px solid #b08d57;
+  box-shadow: 0 5px 25px #241a17a6; border-radius: 5px;
+}
+.musica-encabezado { display: flex; align-items: center; justify-content: space-between; gap: .5rem; }
+.musica-titulo { font-family: "Cormorant Garamond", serif; font-size: 1.15rem; font-weight: 700; }
+.musica-plegar { background: #6b2637; color: #fff; border: 1px solid #b08d57; padding: .3rem .6rem; cursor: pointer; font-family: "Lumanosimo", cursive; font-size: .7rem; }
+.musica-plegar:focus-visible { outline: 3px solid #647789; outline-offset: 2px; }
+.musica-persistente p { font-size: .72rem; line-height: 1.4; margin: .35rem 0 .55rem; }
+.musica-reproductor { width: 100%; aspect-ratio: 16 / 9; }
+.musica-reproductor iframe { width: 100%; height: 100%; display: block; border: 0; }
+.musica-oculta { width: auto; max-width: calc(100vw - 2rem); }
+.musica-oculta p, .musica-oculta .musica-reproductor { display: none; }
+@media (max-width: 600px) {
+  body { padding-bottom: 11rem; }
+  .musica-persistente { right: .5rem; bottom: .5rem; width: min(260px, calc(100vw - 1rem)); }
+  .musica-oculta { width: auto; }
+}
+
+/* Firma de la autora: permanece visible entre escenas */
+.creditos-autora { text-align:center; max-width:650px; margin:35px auto 20px; padding:25px 20px; border-top:1px solid #b08d57; }
+.creditos-autora p { font-family:"Lumanosimo",cursive; font-size:.85rem; color:#4b382d; margin-bottom:10px; }
+.creditos-autora .nombre-autora { font-family:"Cormorant Garamond",serif; font-size:1.3rem; font-weight:600; color:#6b2637; }
+.creditos-autora a { display:inline-block; font-family:"Playwrite ID",cursive; font-size:.8rem; color:#6b2637; text-decoration:none; transition:color .3s ease,transform .3s ease; }
+.creditos-autora a:hover { color:#b08d57; transform:translateY(-2px); }
+.creditos-autora a:focus-visible { outline:3px solid #647789; outline-offset:4px; }
+@media (prefers-reduced-motion:reduce) { .creditos-autora a { transition:none; } .creditos-autora a:hover { transform:none; } }
